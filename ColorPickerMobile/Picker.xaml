@@ -2,8 +2,108 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ColorPickerMobile.Picker"
-             Title="Picker">
-    <VerticalStackLayout>
-        
-    </VerticalStackLayout>
+             Title="Picker"
+             BackgroundColor="Black"
+             x:Name="niggaColor">
+    <FlexLayout
+        AlignContent="Center"
+        AlignItems="Center"
+        WidthRequest="400"
+        HeightRequest="450"
+        >
+    <Frame CornerRadius="10">
+            <StackLayout
+        WidthRequest="350"
+        HeightRequest="500"
+        BackgroundColor="White">
+            <Label
+            Text="Color Picker"
+            FontSize="20"
+            FontAttributes="Bold"
+            HeightRequest="25"
+            WidthRequest="250"
+            HorizontalTextAlignment="Center"
+            FontFamily="Comic Sans MS"/>
+            <Label
+            Text="Red Value:"
+            FontSize="16"
+            HeightRequest="25"
+            WidthRequest="250"
+            HorizontalTextAlignment="Start"
+            FontFamily="Comic Sans MS"/> 
+        <Slider x:Name="redSlider"
+        WidthRequest="220"
+        Minimum="0"
+        Maximum="255"
+        MinimumTrackColor="Red"
+        MaximumTrackColor="Gray"
+        ThumbColor="DarkRed"
+        ValueChanged="sliderRed"
+        />
+            <Label
+            Text="Green Value:"
+            FontSize="16"
+            HeightRequest="25"
+            WidthRequest="250"
+            HorizontalTextAlignment="Start"
+            FontFamily="Comic Sans MS"/>
+        <Slider x:Name="greenSlider"
+        WidthRequest="220"
+        Minimum="0"
+        Maximum="255"
+        MinimumTrackColor="Lime"
+        MaximumTrackColor="Gray"
+        ThumbColor="DarkRed"
+        ValueChanged="sliderGreen"
+        />
+            <Label
+            Text="Blue Value:"
+            FontSize="16"
+            HeightRequest="25"
+            WidthRequest="250"
+            HorizontalTextAlignment="Start"
+            FontFamily="Comic Sans MS"/> 
+        <Slider x:Name="blueSlider"
+        WidthRequest="220"
+        Minimum="0"
+        Maximum="255"
+        MinimumTrackColor="#0000ff"
+        MaximumTrackColor="Gray"
+        ThumbColor="DarkRed"
+        ValueChanged="sliderBlue"
+        />
+                <Frame CornerRadius="20"
+                       HeightRequest="60"
+                       WidthRequest="150"
+                       Margin="50">
+                    
+                    <Label
+            x:Name="Hexd"
+            Text="#000000"
+            HorizontalTextAlignment="Center"/>
+
+                </Frame>
+                <ImageButton
+                Source="copy.png"
+                HeightRequest="10"
+                WidthRequest="10"
+                    Margin="-100"
+                    TranslationX="50"
+                    Clicked="copyButtonClicked"
+                />
+                <Button
+                    Text="Generate Random Color"
+                    x:Name="ButtonColor"
+                    HeightRequest="50"
+                    WidthRequest="350"
+                    Margin="160"
+                    BackgroundColor="Black"
+                    Clicked="OnButtonClicked"
+                    />
+                
+
+
+            </StackLayout>
+        </Frame>
+        </FlexLayout>
 </ContentPage>
